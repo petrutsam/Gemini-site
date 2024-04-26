@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CraftCup Creations</title>
+    <style>
+        /* Colorful background with gradient */
+        body {
+            background: linear-gradient(to right, #ffc107, #f99b15);
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        /* Header section */
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header a {
+            text-decoration: none;
+            color: #333;
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+
+        header a:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Main content section */
+        main {
+            padding: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        /* Product box styling */
+        .product {
+            width: 250px;
+            margin: 15px;
+            border: 1px solid #ddd;
+            padding: 15px;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .product h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .product p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        /* Footer section */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CraftCup Creations</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Products</a>
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="product">
+            <img src="images/mug1.jpg" alt="Custom Mug">
+            <h3>Classic White Mug</h3>
+            <p>Our most popular mug! Perfect for everyday use or a personalized gift.</p>
+        </div>
+        <div class="product">
+            <img src="images/mug2.jpg" alt="Travel Mug">
+            <h3>Travel Mug (Double Wall)</h3>
+            <p>Keeps your drinks hot or cold for hours. Perfect for on-the-go coffee lovers.</p>
+        </div>
+        <div class="product">
+            <img src="images/mug3.jpg" alt="Color Changing Mug">
+            <h3>Magic Mug (Color Changing)</h3>
+            <p>Watch your design magically appear when you add hot liquid!</p>
+        </div>
+        </main>
+
+    <footer>
+        <p>&copy; CraftCup Creations <?php echo date("Y"); ?></p>
+    </footer>
+
+    <script>
+        const images = document.querySelectorAll('.product img');
+        images.forEach(image => {
+            image.addEventListener('load', () => {
+                const product = image.parentElement;
+                const imageHeight = image.offsetHeight;
+                product.style.height = `${imageHeight + 50}px`; // Adjust height based on content
+            });
+        });
+    </script>
+</body>
+</html>
